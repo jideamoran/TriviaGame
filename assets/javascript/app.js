@@ -1,11 +1,10 @@
 // initialize the .js document with this. It contains all of the code for the .js file:
 
 
+$(document).ready(function() {
 
-$( document ).ready(function() {
+   
 
-    
-    
 
     // this game object holds all of the questions, possible answers, and then the index of the correct answer for each
     // 10 questions
@@ -65,58 +64,9 @@ $( document ).ready(function() {
             }, 
           
             ]}
-    
-        // test
-        var message = 'Game Over!';
-        // var $message = $('#message');
-        // test
-    
+
 
     
-        // These events start the timer: set the number of seconds the guesser has 
-        var number = 30;
-        $('#timeLeft').on('click', run);
-    
-        // This function enables the number of seconds to decrease with time, and to display
-        // the result of that decrease until time is up. 
-        function decrement(){
-            // Decrease number by one.
-            number--;
-            // Show the number in the #timeLeft div.
-            $('#timeLeft').html('<h2>' + number + " seconds"+'</h2>');
-            // When the number is equal to zero, 
-            if (number === 0){
-            // run the stop function.
-            stop();
-            // Alert the user that time is up. Update the innerHTML of the message
-           // div to say 'Game Over!'
-            // alert('Time Up!')
-            $('#message').html('time up!');
-            checkAnswers();
-            }
-        }
-        // test
-        // writes the win or lose message 
-            // function writeMessage (){
-            // 	// updates the contents of the message div
-            // 	$message.html(message);
-            // }
-        // test
-    
-        // the run function sets the spacing of the decrement function's time interval so that
-        // it can be equal to a second per number decrement.
-        function run(){
-            counter = setInterval(decrement, 1000);
-        }
-        
-        // The stop function
-        function stop(){
-        // Clears our "counter" interval. The interval name is passed to the clearInterval function.
-            clearInterval(counter);
-        }
-    
-        // Execute the run function.
-        run();
     
         // this function dynamically creates the inputs needed for the form and relates them to the
         // items held within the game object 
@@ -163,9 +113,9 @@ $( document ).ready(function() {
     
         // function to build the display of guesser results
         function resultsTemplate(question){
-            var htmlBlock = '<div>'
+            var htmlBlock = '<div.results>'
             htmlBlock = htmlBlock + question.question + ': ' + isChecked;
-            return htmlBlock + "</div>";
+            return htmlBlock + "</div.results>";
         }
         
         // function to tabulate the guesser results
@@ -224,6 +174,10 @@ $( document ).ready(function() {
             $('#doneButton').on('click', function() {
             checkAnswers();
             stop();
+            resultsTemplate();
             $("#messageDiv").html("Game Over!");
     })
 });
+
+$('#allover').css('background-color', '#FF6600');
+
