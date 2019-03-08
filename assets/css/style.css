@@ -1,0 +1,22 @@
+
+
+{
+    background: #1e1e1e  url(images/bg04.jpg) repeat;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11pt;
+    color: #7f7f7f;
+}
+
+
+#thebody {
+
+
+	background: rgba(251,150,132,1);
+	border-radius: 102px 102px 102px 102px;
+	-moz-border-radius: 102px 102px 102px 102px;
+	-webkit-border-radius: 102px 102px 102px 102px;
+	border: 11px groove #000000;
+
+
+}
+
